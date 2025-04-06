@@ -55,51 +55,35 @@ body {
 /* Contenedor de la galería */
 /* Contenedor de la galería */
 .gallery {
-  display: flex; /* Cambia a flexbox para un mejor control */
-  flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
-  justify-content: center; /* Centra las imágenes horizontalmente */
+  display: grid; /* Cambia a grid para organizar las imágenes */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+  grid-gap: 10px; /* Espaciado entre las imágenes */
+  justify-content: center; /* Centra la cuadrícula horizontalmente */
   align-items: center; /* Centra las imágenes verticalmente */
-  gap: 10px; /* Espaciado entre las imágenes */
   width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
-  max-width: 400px; /* Limita el ancho máximo en pantallas grandes */
+  max-width: 600px; /* Limita el ancho máximo */
   margin: 0 auto; /* Centra la galería horizontalmente */
   padding: 10px; /* Espaciado interno */
   box-sizing: border-box; /* Incluye el padding y el borde en el ancho total */
 }
-/* Imágenes dentro de la galería */
+
 /* Imágenes dentro de la galería */
 .gallery > img {
-  position: relative; /* Cambia a relativo para evitar problemas de superposición */
   width: 100%; /* Asegúrate de que las imágenes ocupen todo el ancho disponible */
-  max-width: 150px; /* Limita el ancho máximo de las imágenes */
   aspect-ratio: 1; /* Mantiene la proporción de las imágenes */
   object-fit: cover; /* Ajusta las imágenes para que se vean bien */
-  border: 10px solid #f2f2f2; /* Marco blanco */
+  border: 5px solid #f2f2f2; /* Marco blanco */
   box-shadow: 0 0 4px #0007; /* Sombra */
   z-index: 1;
   opacity: 0; /* Oculta las imágenes por defecto */
-  transition: transform 1s ease, opacity 1s ease, z-index 0s 1s; /* Suaviza la transición */
-}
-@media (max-width: 768px) {
-  .gallery {
-      flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
-      justify-content: center; /* Centra las imágenes horizontalmente */
-      gap: 50px; /* Espaciado entre las imágenes */
-      max-width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
-      padding: 10px; /* Espaciado interno */
-  }
-
-  .gallery > img {
-      width: 120px; /* Reduce el tamaño de las imágenes en móviles */
-      height: auto; /* Mantiene la proporción de las imágenes */
-  }
+  transition: transform 1s ease, opacity 1s ease; /* Suaviza la transición */
 }
 
 /* Imagen activa (visible) */
 .gallery > img.active {
   z-index: 3; /* La imagen activa está al frente */
   opacity: 1; /* Muestra la imagen activa */
-  transform: translateX(0) rotate(0deg) scale(1.1); /* Aumenta ligeramente el tamaño */
+  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out; /* Suaviza la transición */
 }
 
@@ -107,7 +91,7 @@ body {
 .gallery > img.stacked {
   z-index: 2; /* Las imágenes apiladas están detrás */
   opacity: 0.6; /* Leve transparencia para las imágenes apiladas */
-  transform: translateX(-30px) translateY(20px) rotate(-10deg) scale(0.9); /* Más desplazamiento y rotación */
+  transform: translateY(10px) rotate(-5deg) scale(0.9); /* Más desplazamiento y rotación */
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out; /* Suaviza la transición */
 }
 
@@ -115,8 +99,25 @@ body {
 .gallery > img.behind {
   z-index: 1; /* Las imágenes más atrás */
   opacity: 0.3; /* Más transparencia */
-  transform: translateX(-50px) translateY(40px) rotate(-15deg) scale(0.8); /* Más desplazamiento y rotación */
+  transform: translateY(20px) rotate(-10deg) scale(0.8); /* Más desplazamiento y rotación */
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out; /* Suaviza la transición */
+}
+@media (max-width: 768px) {
+  .gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 columnas en pantallas medianas */
+      grid-gap: 10px; /* Espaciado entre las imágenes */
+  }
+
+  .gallery > img {
+      width: 100%; /* Asegúrate de que las imágenes ocupen todo el ancho disponible */
+  }
+}
+
+@media (max-width: 480px) {
+  .gallery {
+      grid-template-columns: 1fr; /* 1 columna en pantallas pequeñas */
+      grid-gap: 10px; /* Espaciado entre las imágenes */
+  }
 }
 
 /* Keyframes para las animaciones */
