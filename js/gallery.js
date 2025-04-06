@@ -32,6 +32,37 @@ document.addEventListener("DOMContentLoaded", function () {
   // Agregar un evento de clic a la galería
   document.querySelector('.gallery').addEventListener('click', showNextImage);
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const heartContainer = document.getElementById("heart-container");
+
+  function createHeart() {
+      const heart = document.createElement("div");
+      heart.classList.add("heart");
+
+      // Posición horizontal aleatoria
+      heart.style.left = Math.random() * 100 + "vw";
+
+      // Tamaño aleatorio
+      const size = Math.random() * 10 + 10 + "px";
+      heart.style.width = size;
+      heart.style.height = size;
+
+      // Duración aleatoria
+      heart.style.animationDuration = Math.random() * 2 + 3 + "s";
+
+      heartContainer.appendChild(heart);
+
+      // Elimina el corazón después de que termine la animación
+      setTimeout(() => {
+          heart.remove();
+      }, 5000);
+  }
+
+  // Genera corazones cada 100ms (más abundante)
+  setInterval(createHeart, 50);
+});
+
 function openOtherProject() {
     window.location.href = "love letter.html"; // Ruta al archivo love letter.html
   }
