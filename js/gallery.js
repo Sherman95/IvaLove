@@ -60,7 +60,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Genera corazones cada 100ms (más abundante)
-  setInterval(createHeart, 50);
+  setInterval(createHeart, 10);
 });
 
 document.addEventListener("DOMContentLoaded", function () {
