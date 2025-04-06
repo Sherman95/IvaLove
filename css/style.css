@@ -54,19 +54,18 @@ body {
 
 /* Contenedor de la galería */
 .gallery {
-    --d: 10s;
-    display: flex; /* Cambia a flexbox para un mejor control */
-    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
-    justify-content: center; /* Centra las imágenes horizontalmente */
-    align-items: center; /* Centra las imágenes verticalmente */
-    gap: 10px; /* Espaciado entre las imágenes */
-    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
-    max-width: 400px; /* Limita el ancho máximo en pantallas grandes */
-    margin: 0 auto; /* Centra la galería horizontalmente */
-    padding: 10px; /* Espaciado interno */
-    position: relative; /* Asegura que las imágenes se posicionen dentro del contenedor */
+  --d: 10s;
+  display: flex; /* Cambia a flexbox para un mejor control */
+  flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+  justify-content: center; /* Centra las imágenes horizontalmente */
+  align-items: center; /* Centra las imágenes verticalmente */
+  gap: 10px; /* Espaciado entre las imágenes */
+  width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+  max-width: 400px; /* Limita el ancho máximo en pantallas grandes */
+  margin: 0 auto; /* Centra la galería horizontalmente */
+  padding: 10px; /* Espaciado interno */
+  position: relative; /* Asegura que las imágenes se posicionen dentro del contenedor */
 }
-
 /* Imágenes dentro de la galería */
 .gallery > img {
     position: absolute; /* Superpone las imágenes */
@@ -104,6 +103,20 @@ body {
   opacity: 0.3; /* Más transparencia */
   transform: translateX(-50px) translateY(40px) rotate(-15deg) scale(0.8); /* Más desplazamiento y rotación */
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out; /* Suaviza la transición */
+}
+@media (max-width: 768px) {
+  .gallery {
+      flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+      justify-content: center; /* Centra las imágenes horizontalmente */
+      gap: 10px; /* Espaciado entre las imágenes */
+      max-width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+      padding: 10px; /* Espaciado interno */
+  }
+
+  .gallery > img {
+      width: 100px; /* Reduce el tamaño de las imágenes en móviles */
+      height: auto; /* Mantiene la proporción de las imágenes */
+  }
 }
 
 /* Keyframes para las animaciones */
