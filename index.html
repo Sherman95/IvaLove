@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Para el Amor de Mi vida</title>
+  <title>Valentine's Day Flip Book</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-<audio id="background-music" autoplay loop>
-    <source src="song2.mp3" type="audio/mpeg">
-    Tu navegador no soporta el elemento de audio.
-</audio>
+
+
   <div id="hedlinecontainer">
     <div id="shine">Te Amo Mi Niña💞</div>
   </div>
@@ -42,6 +40,12 @@
     <div class="open-project">
       <button onclick="openOtherProject()" id="shine">Amor De mi vida da CLick</button>
     </div>
+
+    <script>
+      function openOtherProject() {
+        window.location.href = "https://tu-otro-proyecto.com?playMusic=true";
+      }
+    </script>
   </div>
   <div id="heart-container"></div>
 </body>
