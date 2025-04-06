@@ -55,11 +55,15 @@ body {
 /* Contenedor de la galería */
 .gallery {
     --d: 10s;
-    display: grid;
-    place-items: center; /* Centra horizontal y verticalmente las imágenes */
-    width: 220px;
-    height: 220px;
+    display: flex; /* Cambia a flexbox para un mejor control */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    align-items: center; /* Centra las imágenes verticalmente */
+    gap: 10px; /* Espaciado entre las imágenes */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+    max-width: 400px; /* Limita el ancho máximo en pantallas grandes */
     margin: 0 auto; /* Centra la galería horizontalmente */
+    padding: 10px; /* Espaciado interno */
     position: relative; /* Asegura que las imágenes se posicionen dentro del contenedor */
 }
 
