@@ -67,18 +67,32 @@ body {
   position: relative; /* Asegura que las imágenes se posicionen dentro del contenedor */
 }
 /* Imágenes dentro de la galería */
+/* Imágenes dentro de la galería */
 .gallery > img {
-    position: absolute; /* Superpone las imágenes */
-    top: 0;
-    left: 0;
-    width: 100%;
-    aspect-ratio: 1;
-    object-fit: cover;
-    border: 10px solid #f2f2f2; /* Marco blanco */
-    box-shadow: 0 0 4px #0007; /* Sombra */
-    z-index: 1;
-    opacity: 0; /* Oculta las imágenes por defecto */
-    transition: transform 1s ease, opacity 1s ease, z-index 0s 1s; /* Suaviza la transición */
+  position: relative; /* Cambia a relativo para evitar problemas de superposición */
+  width: 100%; /* Asegúrate de que las imágenes ocupen todo el ancho disponible */
+  max-width: 150px; /* Limita el ancho máximo de las imágenes */
+  aspect-ratio: 1; /* Mantiene la proporción de las imágenes */
+  object-fit: cover; /* Ajusta las imágenes para que se vean bien */
+  border: 10px solid #f2f2f2; /* Marco blanco */
+  box-shadow: 0 0 4px #0007; /* Sombra */
+  z-index: 1;
+  opacity: 0; /* Oculta las imágenes por defecto */
+  transition: transform 1s ease, opacity 1s ease, z-index 0s 1s; /* Suaviza la transición */
+}
+@media (max-width: 768px) {
+  .gallery {
+      flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+      justify-content: center; /* Centra las imágenes horizontalmente */
+      gap: 10px; /* Espaciado entre las imágenes */
+      max-width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+      padding: 10px; /* Espaciado interno */
+  }
+
+  .gallery > img {
+      width: 100px; /* Reduce el tamaño de las imágenes en móviles */
+      height: auto; /* Mantiene la proporción de las imágenes */
+  }
 }
 
 /* Imagen activa (visible) */
@@ -103,20 +117,6 @@ body {
   opacity: 0.3; /* Más transparencia */
   transform: translateX(-50px) translateY(40px) rotate(-15deg) scale(0.8); /* Más desplazamiento y rotación */
   transition: transform 0.8s ease-in-out, opacity 0.8s ease-in-out; /* Suaviza la transición */
-}
-@media (max-width: 768px) {
-  .gallery {
-      flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
-      justify-content: center; /* Centra las imágenes horizontalmente */
-      gap: 10px; /* Espaciado entre las imágenes */
-      max-width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
-      padding: 10px; /* Espaciado interno */
-  }
-
-  .gallery > img {
-      width: 100px; /* Reduce el tamaño de las imágenes en móviles */
-      height: auto; /* Mantiene la proporción de las imágenes */
-  }
 }
 
 /* Keyframes para las animaciones */
