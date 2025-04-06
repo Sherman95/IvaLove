@@ -1,0 +1,257 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fae1dd;
+}
+
+.container {
+  position: relative;
+}
+
+.valentines {
+  position: relative;
+  top: 50px;
+  cursor: pointer;
+  animation: up 3s linear infinite;
+}
+
+@keyframes up {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-30px);
+  }
+}
+
+.envelope {
+  position: relative;
+  width: 300px;
+  height: 240px;
+  background-color: #f08080;
+  
+}
+
+.envelope:before {
+  background-color: #f08080;
+  content: "";
+  position: absolute;
+  width: 212px;
+  height: 212px;
+  transform: rotate(45deg);
+  top: -105px;
+  left: 44px;
+  border-radius: 30px 0 0 0;
+}
+.card {
+  position: absolute;
+  background-color: #eae2b7;
+  width: 270px;
+  height: 220px; /* Altura inicial */
+  top: -10px; /* Posición inicial */
+  left: 15px;
+  box-shadow: -5px -5px 100px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s ease; /* Transición suave */
+  z-index: 1; /* Nivel inicial */
+  overflow: hidden; /* Oculta cualquier contenido que sobresalga */
+}
+
+.card.expanded {
+  position: fixed; /* Fija la carta delante de todo */
+  top: 50%; /* Centra verticalmente */
+  left: 50%; /* Centra horizontalmente */
+  transform: translate(-50%, -50%); /* Ajusta el centro */
+  width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+  height: 120%; /* Ocupa el 90% de la altura de la pantalla */
+  z-index: 1000; /* Asegúrate de que esté delante de todo */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
+  overflow: auto; /* Permite desplazamiento si el texto es demasiado largo */
+  transition: all 0.5s ease; /* Transición suave */
+}
+.card:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049;
+  border-style: dotted;
+  width: 240px;
+  height: 140px;
+  left: 12px;
+  top: 12px;
+}
+
+.text {
+  position: absolute;
+  font-family: "Brush Script MT", cursive;
+  font-size: 16px; /* Reduce el tamaño del texto */
+  text-align: center;
+  line-height: 1.5; /* Espaciado entre líneas */
+  top: 20px;
+  left: 15px;
+  right: 15px;
+  bottom: 20px;
+  color: #003049;
+  overflow: hidden; /* Oculta cualquier texto que sobresalga */
+  word-wrap: break-word; /* Ajusta las palabras largas */
+}
+.card.expanded:before {
+  content: "";
+  position: absolute;
+  border: 3px solid #003049; /* Color y estilo del marco */
+  border-style: dotted; /* Estilo del borde */
+  width: calc(100% - 24px); /* Ajusta el ancho del marco */
+  height: calc(100% - 24px); /* Ajusta la altura del marco */
+  left: 12px; /* Espaciado desde el borde izquierdo */
+  top: 12px; /* Espaciado desde el borde superior */
+  z-index: 1100; /* Asegúrate de que el marco esté delante del contenido */
+  pointer-events: none; /* Evita que interfiera con los clics */
+}
+
+.heart:before {
+  top: -15px;
+  left: 0;
+}
+
+.heart:after {
+  left: 15px;
+  top: 0;
+}
+
+.hearts {
+  position: absolute;
+}
+
+.one,
+.two,
+.three,
+.four,
+.five {
+  background-color: red;
+  display: inline-block;
+  height: 10px;
+  margin: 0 10px;
+  position: relative;
+  transform: rotate(-45deg);
+  width: 10px;
+  top: 50px;
+}
+
+.one:before,
+.one:after,
+.two:before,
+.two:after,
+.three:before,
+.three:after,
+.four:before,
+.four:after,
+.five:before,
+.five:after {
+  content: "";
+  background-color: red;
+  border-radius: 50%;
+  height: 10px;
+  position: absolute;
+  width: 10px;
+}
+
+.one:before,
+.two:before,
+.three:before,
+.four:before,
+.five:before {
+  top: -5px;
+  left: 0;
+}
+
+.one:after,
+.two:after,
+.three:after,
+.four:after,
+.five:after {
+  left: 5px;
+  top: 0;
+}
+
+.one {
+  left: 10px;
+  animation: heart 1s ease-out infinite;
+}
+
+.two {
+  left: 30px;
+  animation: heart 2s ease-out infinite;
+}
+
+.three {
+  left: 50px;
+  animation: heart 1.5s ease-out infinite;
+}
+
+.four {
+  left: 70px;
+  animation: heart 2.3s ease-out infinite;
+}
+
+.five {
+  left: 90px;
+  animation: heart 1.7s ease-out infinite;
+}
+
+@keyframes heart {
+  0% {
+    transform: translateY(0) rotate(-45deg) scale(0.3);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-150px) rotate(-45deg) scale(1.3);
+    opacity: 0.5;
+  }
+}
+
+.front {
+  position: absolute;
+  border-right: 180px solid #f4978e;
+  border-top: 95px solid transparent;
+  border-bottom: 100px solid transparent;
+  left: 120px;
+  top: 45px;
+  width: 0;
+  height: 0;
+  z-index: 10;
+}
+
+.front:before {
+  position: absolute;
+  content: "";
+  border-left: 300px solid #f8ad9d;
+  border-top: 195px solid transparent;
+  left: -120px;
+  top: -95px;
+  width: 0;
+  height: 0;
+}
+
+.shadow {
+  position: absolute;
+  width: 270px; /* El ancho debe coincidir con el ancho de la carta */
+  height: 25px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: calc(100% + 15px); /* Coloca la sombra justo debajo del contenedor */
+  left: 5%; /* Centra la sombra horizontalmente */
+  transform: translateX(-50%); /* Corrige el desplazamiento horizontal */
+  animation: scale 3s linear infinite;
+  z-index: -1; /* Asegúrate de que esté detrás del contenido */
+}
+
+@keyframes scale {
+  0%,
+  100% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(0.85);
+  }
+}
