@@ -63,6 +63,18 @@ document.addEventListener("DOMContentLoaded", function () {
   setInterval(createHeart, 50);
 });
 
+document.addEventListener("DOMContentLoaded", function () {
+  const images = document.querySelectorAll('.gallery > img'); // Selecciona todas las imágenes
+  const backgroundMusic = document.getElementById("background-music"); // Selecciona el audio
+
+  // Agrega un evento de clic a cada imagen
+  images.forEach(image => {
+      image.addEventListener("click", function () {
+          backgroundMusic.play(); // Reproduce la música
+      });
+  });
+});
+
 function openOtherProject() {
     window.location.href = "love letter.html"; // Ruta al archivo love letter.html
   }
