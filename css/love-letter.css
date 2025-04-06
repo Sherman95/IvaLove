@@ -65,7 +65,7 @@ body {
   left: 50%; /* Centra horizontalmente */
   transform: translate(-50%, -50%); /* Ajusta el centro */
   width: 90%; /* Ocupa el 90% del ancho de la pantalla */
-  height: 120%; /* Ocupa el 90% de la altura de la pantalla */
+  height: 140%; /* Ocupa el 90% de la altura de la pantalla */
   z-index: 1000; /* Asegúrate de que esté delante de todo */
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); /* Sombra más pronunciada */
   overflow: auto; /* Permite desplazamiento si el texto es demasiado largo */
