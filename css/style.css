@@ -52,11 +52,11 @@ body {
 }
 
 
-/* Contenedor de la galería */
+
 /* Contenedor de la galería */
 .gallery {
   display: grid; /* Cambia a grid para organizar las imágenes */
-  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño */
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas de igual tamaño en pantallas grandes */
   grid-gap: 10px; /* Espaciado entre las imágenes */
   justify-content: center; /* Centra la cuadrícula horizontalmente */
   align-items: center; /* Centra las imágenes verticalmente */
@@ -75,10 +75,9 @@ body {
   border: 5px solid #f2f2f2; /* Marco blanco */
   box-shadow: 0 0 4px #0007; /* Sombra */
   z-index: 1;
-  opacity: 0; /* Oculta las imágenes por defecto */
+  opacity: 1; /* Asegúrate de que las imágenes sean visibles */
   transition: transform 1s ease, opacity 1s ease; /* Suaviza la transición */
 }
-
 /* Imagen activa (visible) */
 .gallery > img.active {
   z-index: 3; /* La imagen activa está al frente */
