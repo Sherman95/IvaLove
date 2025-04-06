@@ -272,7 +272,65 @@ button:hover {
     height: 500px;
     border: none;
 }
+#heart-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* Evita que interfiera con los clics */
+  overflow: hidden;
+  z-index: 999; /* Asegúrate de que esté encima de todo */
+}
 
+.heart {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff6b81; /* Color del corazón */
+  transform: rotate(45deg);
+  animation: fall 5s linear infinite, sway 3s ease-in-out infinite;
+}
+
+.heart:before,
+.heart:after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: #ff6b81;
+  border-radius: 50%;
+}
+
+.heart:before {
+  top: -10px;
+  left: 0;
+}
+
+.heart:after {
+  top: 0;
+  left: -10px;
+}
+
+@keyframes fall {
+  0% {
+    top: -10%;
+    opacity: 1;
+  }
+  100% {
+    top: 110%;
+    opacity: 0;
+  }
+}
+
+@keyframes sway {
+  0%, 100% {
+    transform: rotate(45deg) translateX(0);
+  }
+  50% {
+    transform: rotate(45deg) translateX(20px);
+  }
+}
 /* Ajustes responsivos para pantallas pequeñas */
 @media (max-width: 768px) {
     .pdf-viewer {
