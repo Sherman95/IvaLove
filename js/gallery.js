@@ -64,14 +64,18 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
-  const images = document.querySelectorAll('.gallery > img'); // Selecciona todas las imágenes
-  const backgroundMusic = document.getElementById("background-music"); // Selecciona el audio
+  const backgroundMusic = document.getElementById("background-music");
+  const playMusicButton = document.getElementById("play-music");
 
-  // Agrega un evento de clic a cada imagen
-  images.forEach(image => {
-      image.addEventListener("click", function () {
-          backgroundMusic.play(); // Reproduce la música
-      });
+  // Reproduce o pausa la música al hacer clic en el botón
+  playMusicButton.addEventListener("click", function () {
+      if (backgroundMusic.paused) {
+          backgroundMusic.play();
+          playMusicButton.textContent = "Pausar Música"; // Cambia el texto del botón
+      } else {
+          backgroundMusic.pause();
+          playMusicButton.textContent = "Reproducir Música"; // Cambia el texto del botón
+      }
   });
 });
 
