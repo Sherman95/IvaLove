@@ -7,3 +7,13 @@ document.addEventListener("DOMContentLoaded", function () {
     card.classList.toggle("expanded"); // Alterna la clase 'expanded'
   });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const playMusic = urlParams.get("playMusic");
+
+  if (playMusic === "true") {
+      const backgroundMusic = document.getElementById("background-music");
+      backgroundMusic.play();
+  }
+});
