@@ -7,10 +7,27 @@
     height: 220px;
     margin: 0 auto; /* Centra la galería horizontalmente */
     position: relative; /* Asegura que las imágenes se posicionen dentro del contenedor */
-}/* Contenedor del botón */
+}
+
+/* Contenedor del botón */
 .open-project {
     text-align: center;
     margin-top: 40px; /* Espacio superior para separar del visor de PDF */
+}
+@media (max-width: 768px) {
+  .gallery {
+    display: flex; /* Cambia a flexbox para un mejor control en móviles */
+    flex-wrap: wrap; /* Permite que las imágenes se ajusten en varias filas */
+    justify-content: center; /* Centra las imágenes horizontalmente */
+    gap: 10px; /* Espaciado entre las imágenes */
+    width: 100%; /* Asegúrate de que ocupe todo el ancho disponible */
+    margin: 0 auto; /* Centra la galería horizontalmente */
+  }
+
+  .gallery img {
+    width: 100px; /* Reduce el tamaño de las imágenes en móviles */
+    height: auto; /* Mantiene la proporción de las imágenes */
+  }
 }
 
 /* Estilo del botón */
@@ -230,30 +247,30 @@ button:hover {
     animation: shine 3s infinite; /* Aplica la animación */
   }
   
+ 
+  .open-project button {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3); /* Degradado llamativo */
+    color: #fff; /* Texto blanco */
+    font-size: 1.2rem; /* Tamaño de fuente más grande */
+    font-weight: bold; /* Texto en negrita */
+    padding: 15px 30px; /* Espaciado interno */
+    border: 3px solid gold; /* Contorno dorado */
+    border-radius: 50px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar el mouse */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
+    transition: all 0.3s ease; /* Transición suave para los efectos */
+  }
   
-.open-project button {
-  background: linear-gradient(135deg, #ff758c, #ff7eb3); /* Degradado llamativo */
-  color: #fff; /* Texto blanco */
-  font-size: 1.2rem; /* Tamaño de fuente más grande */
-  font-weight: bold; /* Texto en negrita */
-  padding: 15px 30px; /* Espaciado interno */
-  border: none; /* Sin bordes */
-  border-radius: 50px; /* Bordes redondeados */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para destacar */
-  transition: all 0.3s ease; /* Transición suave para los efectos */
-}
-
-.open-project button:hover {
-  background: linear-gradient(135deg, #ff7eb3, #ff758c); /* Cambia el degradado al pasar el mouse */
-  transform: scale(1.1); /* Aumenta ligeramente el tamaño */
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
-}
-
-.open-project button:active {
-  transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
-  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Sombra más pequeña */
-}
+  .open-project button:hover {
+    background: linear-gradient(135deg, #ff7eb3, #ff758c); /* Cambia el degradado al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3); /* Sombra más pronunciada */
+  }
+  
+  .open-project button:active {
+    transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2); /* Sombra más pequeña */
+  }
 
 /* Contenedor del visor de PDF */
 .pdf-viewer {
