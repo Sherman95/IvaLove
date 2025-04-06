@@ -26,7 +26,24 @@ body {
     transform: translateY(-30px);
   }
 }
+#play-music {
+  display: block;
+  margin: 20px auto; /* Centra el botón horizontalmente */
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #ff6b81; /* Color de fondo */
+  color: white; /* Color del texto */
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease;
+  text-align: center; /* Asegura que el texto esté centrado */
+}
 
+#play-music:hover {
+  background-color: #ff4a61; /* Color al pasar el mouse */
+}
 .envelope {
   position: relative;
   width: 300px;
