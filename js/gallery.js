@@ -32,7 +32,6 @@ document.addEventListener("DOMContentLoaded", function () {
   // Agregar un evento de clic a la galería
   document.querySelector('.gallery').addEventListener('click', showNextImage);
 });
-
 function openOtherProject() {
     window.location.href = "love letter.html"; // Ruta al archivo love letter.html
   }
